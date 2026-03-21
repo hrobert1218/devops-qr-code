@@ -1,0 +1,19 @@
+name: Test_CI_for_PR
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - github_actions_creation
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+  test:
+    run: pwd
+    run: ls -la
