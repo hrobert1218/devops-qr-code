@@ -15,5 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
   test:
-    run: pwd
-    run: ls -la
+    run: |
+      pwd
+      ls -la
+    
