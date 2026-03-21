@@ -1,0 +1,33 @@
+name: Test_CI_for_PR
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+      - github_actions_creation
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Debug commands
+        run: |
+          pwd
+          ls -la
+
+  buildx:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Set up QEMU
+        uses: docker/setup-qemu-action@v4
+      -
+        name: Set up Docker buildx
+        uses: docker/setup-buildx-action@v4
+
+    
